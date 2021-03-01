@@ -1,0 +1,1 @@
+console.log("Simple Webserver succesfully loaded this js file into the page")

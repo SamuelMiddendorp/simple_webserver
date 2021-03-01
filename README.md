@@ -2,7 +2,7 @@
 
 ##### A simple abstraction for a webserver using sockets
 
-### why?
+### Why?
 
 For fun of course! I've always wanted to get into networking and this is a good place to start,
 
