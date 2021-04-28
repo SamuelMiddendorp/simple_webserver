@@ -1,0 +1,11 @@
+Refactor
+
+Constants:
+Response codes and header ascociated
+Content types for different types of responses (css/html etc)
+Functions:
+Format get request into usable dictionary to use in responses
+Add fitting headers to the response the server is sending
+Filereader with different types of errors attached, also should indicate if a
+file does infact ecxist on the source system
+

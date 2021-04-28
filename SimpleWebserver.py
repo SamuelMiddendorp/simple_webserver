@@ -4,11 +4,12 @@ from threading import Thread
 import sys
 import time
 import os
+import webbrowser
 def main():
+    # Check if a system argument is provided
     if(len(sys.argv) > 1):
-        # Check if a system argument is provided
+        # When "." is entered we serve the current directory in powershell
         if(sys.argv[1] == "."):
-            # When "." is entered we serve the current directory in powershell
             server = SimpleWebserver("0.0.0.0", 8000, os.getcwd())
         else:
             server = SimpleWebserver("0.0.0.0", 8000, sys.argv[1])
@@ -33,6 +34,7 @@ class SimpleWebserver:
         # Set timeout in order to be able to handle keyboardinterrupts
         self.server_socket.settimeout(0.5)
     def launch(self):
+        webbrowser.open("http://localhost:8000", new=2)
         self.server_socket.listen(1)
         self._listen()
     def _read_file(self, src: str) -> str:
@@ -74,6 +76,7 @@ class SimpleWebserver:
             raise Exception("Http-code is not implemented yet")
     def _listen(self):
         print("Starting listening on %s and port: %i" % (self.adress, self.port))
+        # encapsulating try catch block for windows.
         try:
             while True:
                 try:
